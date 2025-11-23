@@ -1,0 +1,30 @@
+// Might want to be combined with other functions that run at the same rate, like PresentWrapper.
+
+// Function Set-up:
+// Run every 5 Ticks
+// Create Delivery Zone Regions
+// deliverytime = Delivery Time, default should be 60 for 3 seconds.
+// deliveryspd = Delivery Speed, default should be tick speed
+
+// Checks if you have any presents.
+if (var presents > 0) {
+
+} else {
+   exit
+}
+// Checks if you are in any delivery zone.
+if or (inRegion "ssdeliveryzone", inRegion "fvdeliveryzone") {
+   // replace with delivering var check if each zone sets delivering var to true|false on entry and exit
+} else {
+   exit
+}
+// Checks if your delivery timer is complete.
+if and (var deliverytime <= 0) {
+   var presents -= 1
+   var xpgain += 2
+   var coingain += 5
+   function "DeliveryEfficency"
+   var deliverytime = 60
+} else {
+   deliverytime -= %var.player/deliveryspd%
+}

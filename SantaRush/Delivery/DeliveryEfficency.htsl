@@ -1,0 +1,8 @@
+// deliveff = Delivery Efficiency Upgrade
+// Checks if the deliveff stat is higher than the random int from 1-15
+// If deliveff = 0 means the upgrade is not purchased.
+// I chose 1-15 because it means each level gives roughtly 0.06% per level.
+if (var deliveff > %random.whole/1 15%) {
+   // var xpgain *= 2,
+   var coingain *= 2
+} 

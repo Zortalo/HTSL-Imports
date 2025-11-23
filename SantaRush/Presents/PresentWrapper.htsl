@@ -1,0 +1,21 @@
+// Function Set-up:
+// Run every 5 Ticks
+// Create Wrapping Station Region
+// wraptime = Wrapping Time, default should be 20 for 1 second.
+// wrapspd = Wrapping Speed, default should be tick speed
+
+if and (inRegion "wrappingstation") {
+
+} else {
+   exit
+}
+
+if and (var presents < %var.player/pbagcap%, var wraptimer <= 0) {
+   // var xpgain += %var.player/xpperwrap%
+   var presents += 1
+   var wraptimer = 20
+}
+// wrapspd = wrap speed, this should start at 5 for 1 second per wrapped present, increasing based on upgrades
+if and (var wraptimer > 0) {
+   var wraptimer -= %var.player/wrapspd%
+}

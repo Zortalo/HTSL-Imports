@@ -1,0 +1,13 @@
+// Trigger every 5 ticks
+// Increase coingain as calculations for coin multipliers happen here.
+
+if (var coingain > 0) {
+    //nbhcmulti = neighborhood coin multiplier
+    var coingain *= %var.player/nbhcmulti 1%
+    var coingain *= %var.global/eventcmulti 1%
+    var coingain *= %var.player/prestigecmulti 1%
+
+    var coin += var coingain
+    chat "You received &6%var.player/coingain% Coins!"
+    var coingain = 0
+}
